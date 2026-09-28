@@ -1,3 +1,29 @@
+Sinh viên thực hiện: Bùi Hoàng Long
+
+Mã sinh viên: K235480106044
+
+Lớp: K59KMTK01
+
+NỘI DUNG YÊU CẦU:
+
+1. tìm hiểu thuật toán mã hoá hiện đại DES, AES
+
+   mô tả đc thuật toán, quy trình mã hoá/giải mã
+   
+   cài đặt AES trên 1 ngôn ngữ lập trình nào đó
+   
+2. tìm hiểu về thuật toán mã hoá bất đối xứng RSA
+ 
+   nguyên lý sinh cặp khoá bí mật, công khai
+   
+3. trình bày các mô hình hình áp dụng thuật toán RSA
+
+   xác thực người gửi, xác thực người nhận, cả 2
+   
+   so sánh thời gian mã hoá/giải mã của RSA với AES.
+   
+   đưa ra các dùng kết hợp sức mạnh của RSA và AES.
+   
 Câu 1: Thuật toán mã hóa hiện đại DES và AES
 
 1. Thuật toán DES (Data Encryption Standard)
