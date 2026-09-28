@@ -21,7 +21,8 @@ bài tập 1:
 4. cấu hình nginx có thể chạy 2 website  với 2 domain khác nhau.
 <img width="1587" height="991" alt="image" src="https://github.com/user-attachments/assets/3380c946-2b6f-4511-a858-b8250e11148c" />
 
-<img width="1587" height="991" alt="image" src="https://github.com/user-attachments/assets/471f6668-b629-44a7-99c7-e402c87f37aa" />
+<img width="2559" height="1599" alt="Ảnh chụp màn hình 2026-09-28 210551" src="https://github.com/user-attachments/assets/83e29253-893a-4956-a21b-cc3591a5342b" />
+
 
 bài tập 2:
 
