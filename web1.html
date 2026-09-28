@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Website 1 - Student API</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        button {
+            padding: 10px 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #message {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Danh sách sinh viên</h1>
+
+    <p>
+        Website gọi API Node-RED thông qua Nginx và Cloudflare Tunnel.
+    </p>
+
+    <button onclick="loadStudents()">
+        Load Students
+    </button>
+
+    <p id="message"></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Money</th>
+            </tr>
+        </thead>
+
+        <tbody id="studentTable">
+        </tbody>
+    </table>
+
+    <script>
+        async function loadStudents() {
+
+            const message = document.getElementById("message");
+            const table = document.getElementById("studentTable");
+
+            message.textContent = "Đang tải dữ liệu...";
+            table.innerHTML = "";
+
+            try {
+
+                const response = await fetch(
+                    "https://api.htphuc.id.vn/api/students"
+                );
+
+                const data = await response.json();
+
+                if (data.ok === 1) {
+
+                    message.textContent = data.msg;
+
+                    data.students.forEach(student => {
+
+                        const row = document.createElement("tr");
+
+                        row.innerHTML = `
+                            <td>${student.id}</td>
+                            <td>${student.name}</td>
+                            <td>${student.money}</td>
+                        `;
+
+                        table.appendChild(row);
+                    });
+
+                } else {
+
+                    message.textContent = "API trả về lỗi.";
+
+                }
+
+            } catch (error) {
+
+                message.textContent =
+                    "Không thể kết nối tới API.";
+
+                console.error(error);
+
+            }
+        }
+    </script>
+
+</body>
+</html>
